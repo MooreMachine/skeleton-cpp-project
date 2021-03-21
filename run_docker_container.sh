@@ -12,7 +12,7 @@ docker run \
     --rm \
     -i \
     -t \
-    -v $(pwd)app:/home \
+    -v $(pwd)/app:/home \
     -w '/home' \
     mooremachine/bareubuntu:$VERSION
 
