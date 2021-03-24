@@ -22,8 +22,10 @@ target_include_directories(helloapp PRIVATE ${INCLUDE_DIRS})
 target_link_libraries(helloapp hellolib)
 target_compile_options(helloapp PRIVATE -Wall -Werror -Wextra -pedantic)
 
+# Define test files
 set(TEST_FILES  tests/main_test.cpp)
 
+# Create unit tests
 add_executable(hellotest ${TEST_FILES})
 target_include_directories(hellotest PRIVATE ${INCLUDE_DIRS})
 target_link_libraries(hellotest gtest hellolib)
