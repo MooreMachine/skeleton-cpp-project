@@ -14,17 +14,17 @@ set(SOURCE_FILES src/messages.cpp)
 
 # Create library
 add_library(hellolib ${SOURCE_FILES})
-target_compile_options(hellolib PRIVATE -Wall -Werror)
+target_compile_options(hellolib PRIVATE -Wall -Werror -Wextra -pedantic)
 
 # Create application
 add_executable(helloapp src/main.cpp)
 target_include_directories(helloapp PRIVATE ${INCLUDE_DIRS})
 target_link_libraries(helloapp hellolib)
-target_compile_options(helloapp PRIVATE -Wall -Werror)
+target_compile_options(helloapp PRIVATE -Wall -Werror -Wextra -pedantic)
 
 set(TEST_FILES  tests/main_test.cpp)
 
 add_executable(hellotest ${TEST_FILES})
 target_include_directories(hellotest PRIVATE ${INCLUDE_DIRS})
 target_link_libraries(hellotest gtest hellolib)
-target_compile_options(hellotest PRIVATE -Wall -Werror)
+target_compile_options(hellotest PRIVATE -Wall -Werror -Wextra -pedantic)
