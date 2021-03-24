@@ -12,10 +12,10 @@ set(SOURCE_FILES src/messages.cpp)
 
 add_library(hellolib ${SOURCE_FILES})
 target_compile_options(hellolib PRIVATE -Wall -Werror)
-target_include_directories(hellolib PRIVATE ${INCLUDE_DIRS})
 
 add_executable(helloapp src/main.cpp)
 target_link_libraries(helloapp hellolib)
+target_include_directories(helloapp PRIVATE ${INCLUDE_DIRS})
 
 set(TEST_FILES  tests/main_test.cpp
                 ${SOURCE_FILES})

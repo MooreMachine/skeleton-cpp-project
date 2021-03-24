@@ -1,7 +1,8 @@
 #include <iostream>
 
+#include "messages.h"
+
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    std::cout << messages::hello() << std::endl;
     return 0;
 }
-
