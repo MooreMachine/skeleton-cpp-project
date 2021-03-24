@@ -3,6 +3,6 @@
 namespace messages
 {
 std::string hello() {
-    return "";
+    return "Hello, World!";
 }
 }
