@@ -17,9 +17,9 @@ add_executable(helloapp src/main.cpp)
 target_link_libraries(helloapp hellolib)
 target_include_directories(helloapp PRIVATE ${INCLUDE_DIRS})
 
-set(TEST_FILES  tests/main_test.cpp
-                ${SOURCE_FILES})
+set(TEST_FILES  tests/main_test.cpp)
 
 add_executable(hellotest ${TEST_FILES})
+target_include_directories(helloapp PRIVATE ${INCLUDE_DIRS})
 target_link_libraries(hellotest gtest hellolib)
 target_include_directories(hellotest PRIVATE ${INCLUDE_DIRS})
