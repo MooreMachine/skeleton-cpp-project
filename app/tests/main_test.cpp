@@ -1,6 +1,8 @@
-#include <gtest/gtest.h>
+#include "messages.h"
+#include "gtest/gtest.h"
 
-TEST(TestTest, EmptyTest) {
+TEST(TestMessages, TestHello) {
+    ASSERT_EQ(messages::hello(), "Hello, World!");
 }
 
 int main(int argc, char** argv) {

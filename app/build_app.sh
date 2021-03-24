@@ -2,5 +2,5 @@
 
 cd build
 cmake ..
-make hello
+make helloapp
 

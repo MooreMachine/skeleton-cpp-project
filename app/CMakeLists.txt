@@ -8,13 +8,18 @@ set(INSTALL_GTEST OFF)
 add_subdirectory(googletest)
 
 set(INCLUDE_DIRS include)
-set(SOURCE_FILES src/main.cpp)
+set(SOURCE_FILES src/messages.cpp)
 
-add_executable(hello ${SOURCE_FILES})
-target_compile_options(hello PRIVATE -Wall -Werror)
-target_include_directories(hello PRIVATE ${INCLUDE_DIRS})
+add_library(hellolib ${SOURCE_FILES})
+target_compile_options(hellolib PRIVATE -Wall -Werror)
+target_include_directories(hellolib PRIVATE ${INCLUDE_DIRS})
 
-set(TEST_FILES tests/main_test.cpp)
+add_executable(helloapp src/main.cpp)
+target_link_libraries(helloapp hellolib)
+
+set(TEST_FILES  tests/main_test.cpp
+                ${SOURCE_FILES})
+
 add_executable(hellotest ${TEST_FILES})
-target_link_libraries(hellotest gtest)
-
+target_link_libraries(hellotest gtest hellolib)
+target_include_directories(hellotest PRIVATE ${INCLUDE_DIRS})
