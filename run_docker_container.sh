@@ -10,9 +10,9 @@ fi
 
 docker run \
     --rm \
-    -i \
-    -t \
-    -v $(pwd)/app:/home \
-    -w '/home' \
+    -it \
+    --entrypoint /bin/bash \
+    -v $(pwd)/app:/app \
+    -w '/app' \
     mooremachine/bareubuntu:$VERSION
 
