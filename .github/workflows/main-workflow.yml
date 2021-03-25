@@ -9,4 +9,3 @@ jobs:
     - name: Start
       id: start
       uses: ./.github/actions/main-docker-action@v1
-      path: ./Dockerfile
