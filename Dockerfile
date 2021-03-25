@@ -9,4 +9,4 @@ RUN apt-get update \
 
 COPY app/ /app/
 
-ENTRYPOINT ["./app/execute_unit_tests.sh"]
+ENTRYPOINT ["bash", "./app/execute_tests.sh"]
