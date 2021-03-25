@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Tests
     steps:
-    - name: Start
-      id: start
+    - name: My action
+      id: action1
       uses: ./main-docker-action@v1
