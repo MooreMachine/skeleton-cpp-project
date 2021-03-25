@@ -1,0 +1,6 @@
+name: 'Test Suite'
+description: 'Run build and unit tests'
+outputs:
+  runs:
+    using: 'docker'
+    image: 'Dockerfile'
