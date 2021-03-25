@@ -9,4 +9,4 @@ jobs:
     - uses: actions/checkout@v2
     - name: My action
       id: action1
-      uses: ./main-docker-action@v1
+      uses: ./actions/main-docker-action@v1
