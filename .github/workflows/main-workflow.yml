@@ -8,4 +8,4 @@ jobs:
     steps:
     - name: Start
       id: start
-      uses: actions/main-docker-action@v1
+      uses: ./.github/actions/main-docker-action@v1
