@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Tests
     steps:
-      - name: Start
+    - name: Start
       id: start
       uses: actions/main-docker-action.yml@v1
