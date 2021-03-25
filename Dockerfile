@@ -7,3 +7,6 @@ RUN apt-get update \
     git \
     vim
 
+COPY app/ /app/
+
+ENTRYPOINT ["bash", "./app/execute_tests.sh"]
