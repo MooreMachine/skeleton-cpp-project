@@ -7,7 +7,8 @@ jobs:
     name: Tests
     steps:
     - uses: actions/checkout@v2
-      with: recursive
+      with: 
+        submodules: recursive
     - name: My action
       id: action1
       uses: ./ # Use action in root directory
