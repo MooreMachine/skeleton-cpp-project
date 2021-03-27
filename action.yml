@@ -1,5 +1,7 @@
 name: 'Test Suite'
 description: 'Run build and unit tests'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: 'composite'
+  steps:
+    - run: ./execute_tests.sh
+      shell: bash

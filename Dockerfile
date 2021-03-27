@@ -6,7 +6,3 @@ RUN apt-get update \
     cmake \
     git \
     vim
-
-COPY app/ /app/
-
-ENTRYPOINT ["bash", "./app/execute_tests.sh"]

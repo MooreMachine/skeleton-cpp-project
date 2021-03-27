@@ -11,6 +11,6 @@ jobs:
     - uses: actions/checkout@v2
       with: 
         submodules: recursive
-    - name: My action
+    - name: Build Tests
       id: action1
       uses: ./ # Use action in root directory
