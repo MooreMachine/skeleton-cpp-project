@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - easier_github_actions
+      - fail_easier_github_actions
 
 jobs:
   main_job:

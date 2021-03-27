@@ -23,7 +23,7 @@ echo "Building app..."
 docker exec \
     -w '/home' \
     build_test \
-    sh -c './build_app.sh && ./build/helloapp'
+    sh -c './build_app.sh && ./build/helloapp && exit 1'
 
 echo "Stopping container..."
 
