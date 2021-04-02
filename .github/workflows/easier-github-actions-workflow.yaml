@@ -14,3 +14,6 @@ jobs:
     - name: Build Tests
       id: action1
       uses: ./ # Use action in root directory
+    - name: Report Status
+      if: ${{ steps.action1.outputs.result != 0 }}
+      run: echo "Something went wrong" && exit 1
