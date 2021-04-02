@@ -1,7 +1,7 @@
 name: 'Test Suite'
 description: 'Run build and unit tests'
 outputs:
-  result: # exit status
+  build_result: # exit status
     description: 'The exit status of the last executed command'
 runs:
   using: 'composite'
