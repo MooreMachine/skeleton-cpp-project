@@ -17,3 +17,5 @@ jobs:
     - name: Report Status
       if: ${{ steps.action1.outputs.build_result != 0 }}
       run: echo "Something went wrong" && exit 1
+      if: ${{ steps.action1.outputs.build_result == 0 }}
+      run: echo "Build result ${{ steps.action1.outputs.build_result }}"
