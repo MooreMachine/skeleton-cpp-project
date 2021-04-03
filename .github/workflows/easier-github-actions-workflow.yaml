@@ -17,7 +17,7 @@ jobs:
     - name: Report Failure
       id: failure
       if: ${{ steps.build_tests.outputs.build_result != 0 }}
-      run: echo "Something went wrong" && exit 1
+      run: echo "Something went wrong. Exit status ${{ steps.build_tests.outputs.build_result }}" && exit 1
     - name: Report Success
       id: success
       if: ${{ steps.build_tests.outputs.build_result == 0 }}
