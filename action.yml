@@ -3,8 +3,10 @@ description: 'Run build and unit tests'
 outputs:
   build_result: # exit status
     description: 'The exit status of the last executed command'
+    value: ${{ steps.tests.outputs.build_result }}
 runs:
   using: 'composite'
   steps:
-    - run: ./execute_tests.sh
+    - id: tests
+      run: ./execute_tests.sh
       shell: bash
