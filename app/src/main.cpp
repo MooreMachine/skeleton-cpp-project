@@ -4,5 +4,5 @@
 
 int main() {
     std::cout << messages::hello() << std::endl;
-    return 0;
+    return 1;
 }
