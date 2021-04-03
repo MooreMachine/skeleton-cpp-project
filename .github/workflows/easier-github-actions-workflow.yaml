@@ -12,13 +12,13 @@ jobs:
       with: 
         submodules: recursive
     - name: Build Tests
-      id: action1
+      id: build_tests
       uses: ./ # Use action in root directory
-    - name: Report Failute
+    - name: Report Failure
       id: failure
-      if: ${{ steps.action1.outputs.build_result != 0 }}
+      if: ${{ steps.build_tests.outputs.build_result != 0 }}
       run: echo "Something went wrong" && exit 1
     - name: Report Success
       id: success
-      if: ${{ steps.action1.outputs.build_result == 0 }}
-      run: echo "Build result ${{ steps.action1.outputs.build_result }}"
+      if: ${{ steps.build_tests.outputs.build_result == 0 }}
+      run: echo "Build result ${{ steps.build_tests.outputs.build_result }}"
