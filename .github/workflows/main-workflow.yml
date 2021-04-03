@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - master
+      - easier_github_actions
 
 jobs:
   main_job:
@@ -12,5 +12,15 @@ jobs:
       with: 
         submodules: recursive
     - name: Build Tests
-      id: action1
-      uses: ./ # Use action in root directory
+      id: build_tests
+      # Use action in root directory
+      uses: ./
+    - name: Report Failure
+      id: failure
+      if: ${{ steps.build_tests.outputs.build_result != 0 }}
+      # use exit 1 to report a failure
+      run: echo "Something went wrong. Exit status ${{ steps.build_tests.outputs.build_result }}" && exit 1
+    - name: Report Success
+      id: success
+      if: ${{ steps.build_tests.outputs.build_result == 0 }}
+      run: echo "Build result ${{ steps.build_tests.outputs.build_result }}"
