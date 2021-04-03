@@ -1,9 +1,12 @@
 name: 'Test Suite'
 description: 'Run build and unit tests'
 outputs:
-  build_result: # exit status
-    description: 'The exit status of the last executed command'
+  build_result:
+    description: 'The status of the build process'
     value: ${{ steps.tests.outputs.build_result }}
+  quick_run_result:
+    description: 'The exit status of running the executable file'
+    value: ${{ steps.tests.outputs.quick_run_result }}
 runs:
   using: 'composite'
   steps:
