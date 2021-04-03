@@ -25,7 +25,7 @@ jobs:
       run: echo "The executable was built but running it produces an error. Exit status ${{ steps.build_tests.outputs.quick_run_result }}."
     - name: Exit due to failure
       id: early_exit
-      if: ${{ steps.build_tests.outputs.build_result != 0 }} || ${{ steps.build_tests.outputs.quick_run_result }}
+      if: ${{ steps.build_tests.outputs.build_result != 0 }} || ${{ steps.build_tests.outputs.quick_run_result != 0 }}
       run: exit 1
     - name: Report success
       id: success
