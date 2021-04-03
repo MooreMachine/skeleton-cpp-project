@@ -23,12 +23,14 @@ echo "Building app..."
 docker exec \
     -w '/home' \
     build_test \
-    sh -c './build_app.sh && echo "::set-output name=build_result::$?"'
+    sh -c './build_app.sh; echo "::set-output name=build_result::$?"'
+
+echo "Running app..."
 
 docker exec \
     -w '/home' \
     build_test \
-    sh -c './build/helloapp && echo "::set-output name=quick_run_result::$?"'
+    sh -c './build/helloapp; echo "::set-output name=quick_run_result::$?"'
 
 echo "Stopping container..."
 
